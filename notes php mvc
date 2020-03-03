@@ -1,0 +1,17 @@
+1. memecah url terus dijadikan array assosiative.
+   parameter -> a. url yang akan dipecah
+                b. komponan url (8) = PHP_URL_SCHEME,PHP_URL_USER,PHP_URL_PASS,PHP_URL_HOST,PHP_URL_PORT,PHP_URL_PATH,PHP_URL_QUERY,PHP_URL_FRAGMENT
+  SC :  mengambil value dari function parseUrl() yang berisi url dan dipecah jadi array assosiative
+
+2. cek apakah ada file / directory
+  SC : jika urlnya http://localhost:8080/phpmvc/public/home/index/tambak/sarirejo/  $url[0]ny home jika ada file ../app/controllers/home.php maka method property controller
+       ditimpa valuenya sekarang home .
+       direquire_once ../app/controllers/home.php dan instansiasi object home diapp/controllers/home.php
+       apakah $url ada value diindex ke 1 jika true apakah diobject home ada method index jika true timpa property method dengan index dan hapus value index 1 di$url .
+       apakah $url masih ada value jika true timpa property params dengan semua value di$url
+
+       jika urlnya http://localhost:8080/phpmvc/public/about/page/tambak/sarirejo/ $url[0]ny value jika ada file ../app/controllers/about.php maka method $this->controller
+       ditimpa valuenya sekarang about . 
+       direquire_once ../app/controllers/about.php dan instansiasi object about diapp/controllers/about.php
+       apakah $url ada value diindex ke 1 jika true apakah diobject about ada method page jika true timpa property method dengan page dan hapus value index 1 di$url .
+       apakah $url masih ada value jika true timpa property params dengan semua value di$url
